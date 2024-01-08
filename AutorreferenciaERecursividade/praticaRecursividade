@@ -1,0 +1,21 @@
+#lang racket
+;; Exerício 4
+;; ListaDeStrings -> ListaDeNumeros
+;; Criar uma lista de numeros a partir de uma lista de strings
+
+(require examples)
+(examples
+ (check-equal? (string-numero empty) empty)
+ (check-equal? (string-numero (cons "3"(cons "4" empty)))(cons 3 (cons 4 empty)))
+ (check-equal? (string-numero (cons "6"(cons "4" empty)))(cons 6 (cons 4 empty)))
+ (check-equal? (string-numero (cons "5"(cons "4" empty)))(cons 5 (cons 4 empty)))
+ (check-equal? (string-numero (cons "2"(cons "4" empty)))(cons 2 (cons 4 empty)))
+ (check-equal? (string-numero (cons "1"(cons "4" empty)))(cons 1 (cons 4 empty))))
+
+(define (string-numero lst)
+  (cond
+    [(empty? lst) empty]
+    [else
+     (cons
+      (string->number(first lst))
+      (string-numero (rest lst)))]))
