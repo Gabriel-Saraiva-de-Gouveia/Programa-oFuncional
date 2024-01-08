@@ -1,0 +1,7 @@
+#lang racket
+(define (string-reverse str)
+  (list->string (reverse (string->list str))))
+
+(define (verificar-palindromo numero)
+  (define numero-string (number->string numero))
+  (string=? numero-string (string-reverse numero-string)))
