@@ -1,5 +1,5 @@
 #lang racket
-;; Trabalho 02 - Programação Funcional:
+;; Trabalho 02 - Programação Funcional: 
 ;; Eduardo Rufino  RA: 129379
 ;; Gabriel Saraiva RA: 129145
 (require examples)
